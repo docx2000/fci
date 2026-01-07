@@ -1,103 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* يمنع النزول */
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-<style>
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  background: #1a1a1a;
-  overflow: hidden;
-}
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  padding: 10px 0;
-}
+    .banner-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 15px;
+    }
 
-.ad-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+    .banner-grid .banner {
+      width: 60px; /* صغير حسب طلبك */
+      height: 60px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-.ad-box {
-  width: 320px; /* حجم موحد لكل البانرات */
-  height: 50px;
-  background: #fff;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  font-weight: bold;
-  color: #333;
-}
+    .banner-grid .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.timer {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  margin: 10px 0;
-}
-</style>
+    .countdown {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="container">
-
-  <!-- إعلانات فوق -->
-  <div class="ad-row">
-    <div class="ad-box">
-      <!-- Adsterra Ad Unit 1 -->
-      AD
+  <div class="container">
+    <!-- Grid of small banners -->
+    <div class="banner-grid">
+      <div class="banner"><img src="https://via.placeholder.com/60x60?text=Logo1" alt="Logo1"></div>
+      <div class="banner"><img src="https://via.placeholder.com/60x60?text=Logo2" alt="Logo2"></div>
+      <div class="banner"><img src="https://via.placeholder.com/60x60?text=Logo3" alt="Logo3"></div>
+      <div class="banner"><img src="https://via.placeholder.com/60x60?text=Logo4" alt="Logo4"></div>
+      <div class="banner"><img src="https://via.placeholder.com/60x60?text=Logo5" alt="Logo5"></div>
+      <!-- ممكن تضيف كود Adsterra هنا بدل الصور -->
     </div>
-    <div class="ad-box">
-      <!-- Adsterra Ad Unit 2 -->
-      AD
+
+    <!-- Countdown -->
+    <div class="countdown">
+      Redirecting in <span id="timer">5</span> seconds...
     </div>
+    <div class="hint">Please wait, you'll be redirected automatically</div>
   </div>
 
-  <!-- العداد -->
-  <div class="timer" id="countdown">5</div>
+  <script>
+    let seconds = 5;
+    const timer = document.getElementById("timer");
 
-  <!-- إعلانات تحت -->
-  <div class="ad-row">
-    <div class="ad-box">
-      <!-- Adsterra Ad Unit 3 -->
-      AD
-    </div>
-    <div class="ad-box">
-      <!-- Adsterra Ad Unit 4 -->
-      AD
-    </div>
-  </div>
-
-</div>
-
-<script>
-let seconds = 5;
-const timer = document.getElementById("countdown");
-
-const countdown = setInterval(() => {
-  seconds--;
-  timer.textContent = seconds;
-  if (seconds <= 0) {
-    clearInterval(countdown);
-    window.location.href = "https://www.facebook.com/photo.php?fbid=3920836284852500&set=pb.100007785019549.-2207520000&type=3"; // الرابط النهائي بعد انتهاء العد
-  }
-}, 1000);
-</script>
-
+    const countdown = setInterval(() => {
+      seconds--;
+      timer.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        window.location.href = "https://www.facebook.com/photo.php?fbid=3920836284852500&set=pb.100007785019549.-2207520000&type=3"; // اللينك اللي انت عايزه
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
