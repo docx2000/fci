@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page</title>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 10px 0;
+}
+
+.ad-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ad-box {
+  width: 320px; /* حجم موحد لكل البانرات */
+  height: 50px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-weight: bold;
+  color: #333;
+}
+
+.timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- إعلانات فوق -->
+  <div class="ad-row">
+    <div class="ad-box">
+      <!-- Adsterra Ad Unit 1 -->
+      AD
+    </div>
+    <div class="ad-box">
+      <!-- Adsterra Ad Unit 2 -->
+      AD
+    </div>
+  </div>
+
+  <!-- العداد -->
+  <div class="timer" id="countdown">5</div>
+
+  <!-- إعلانات تحت -->
+  <div class="ad-row">
+    <div class="ad-box">
+      <!-- Adsterra Ad Unit 3 -->
+      AD
+    </div>
+    <div class="ad-box">
+      <!-- Adsterra Ad Unit 4 -->
+      AD
+    </div>
+  </div>
+
+</div>
+
+<script>
+let seconds = 5;
+const timer = document.getElementById("countdown");
+
+const countdown = setInterval(() => {
+  seconds--;
+  timer.textContent = seconds;
+  if (seconds <= 0) {
+    clearInterval(countdown);
+    window.location.href = "https://www.facebook.com/photo.php?fbid=3920836284852500&set=pb.100007785019549.-2207520000&type=3"; // الرابط النهائي بعد انتهاء العد
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
